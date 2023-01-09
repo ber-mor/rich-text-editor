@@ -1,0 +1,135 @@
+html {
+  font-family: "Montserrat";
+}
+
+.is-active {
+  background-color: rgb(20, 113, 225);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.is-active:hover {
+  background-color: rgb(20, 113, 225);
+}
+
+button {
+  font-family: "Montserrat";
+  border: none;
+  margin: 3px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+button:hover{
+  cursor: pointer;
+  background-color: rgb(236, 245, 255);
+}
+
+.ProseMirror {
+  border: solid 1px lightgray;
+  padding: 10px;
+  border-radius: 10px;
+  height: 90vh;
+}
+
+.ProseMirror:focus {
+  outline: none;
+}
+
+ul, ol {
+  padding: 0 1rem;
+}
+
+code {
+  background-color: rgba(#0d1f3a, 1.0);
+  color: #e4e4e4;
+  padding: 3px;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.ProseMirror-selectednode {
+  outline: 2px solid #b9e3ff;
+}
+
+blockquote {
+  padding-left: 1rem;
+  border-left: 2px solid rgba(#0D0D0D, 0.1);
+}
+
+hr {
+  border: none;
+  border-top: 2px solid rgba(#0D0D0D, 0.1);
+  margin: 2rem 0;
+}
+
+.ProseMirror {
+  table {
+    border-collapse: collapse;
+    margin: 0;
+    overflow: hidden;
+    table-layout: fixed;
+    width: 100%;
+
+    td,
+    th {
+      border: 1px solid #ced4da;
+      box-sizing: border-box;
+      min-width: 1em;
+      padding: 3px 5px;
+      position: relative;
+      vertical-align: top;
+
+      > * {
+        margin-bottom: 0;
+      }
+    }
+
+    th {
+      background-color: #f1f3f5;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .selectedCell:after {
+      background: rgba(200, 200, 255, 0.4);
+      content: "";
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: 2;
+    }
+
+    .column-resize-handle {
+      background-color: #adf;
+      bottom: -2px;
+      position: absolute;
+      right: -2px;
+      pointer-events: none;
+      top: 0;
+      width: 4px;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.tableWrapper {
+  padding: 1rem 0;
+  overflow-x: auto;
+}
+
+.resize-cursor {
+  cursor: ew-resize;
+  cursor: col-resize;
+}
