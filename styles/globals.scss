@@ -1,36 +1,12 @@
 html {
-  font-family: "Montserrat";
+  font-family: "Roboto";
 }
-
-.is-active {
-  background-color: rgb(20, 113, 225);
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-}
-
-.is-active:hover {
-  background-color: rgb(20, 113, 225);
-}
-
-button {
-  font-family: "Montserrat";
-  border: none;
-  margin: 3px;
-  padding: 10px;
-  background-color: white;
-  border-radius: 5px;
-}
-
-button:hover{
-  cursor: pointer;
-  background-color: rgb(236, 245, 255);
-}
-
 .ProseMirror {
-  border: solid 1px lightgray;
-  padding: 10px;
+  padding: 5px 10px;
   border-radius: 10px;
+  margin: 5px 0px;
   height: 90vh;
+  overflow: auto
 }
 
 .ProseMirror:focus {
@@ -49,7 +25,7 @@ code {
 
 img {
   height: auto;
-  max-width: 100%;
+  max-width: 500px;
   border-radius: 10px;
 }
 
@@ -132,4 +108,38 @@ hr {
 .resize-cursor {
   cursor: ew-resize;
   cursor: col-resize;
+}
+
+.table-options{
+  display: none;
+}
+
+.editor-icon{
+  margin: 3px;
+  padding: 3px;
+  border-radius: 5px;
+  transition: 0.1s ease-in-out;
+  color:#a9a9a9
+}
+
+.editor-icon:hover{
+  cursor: pointer;
+  background-color: rgb(236, 245, 255);
+}
+
+.is-active {
+  font-family: "Montserrat";
+  border: none;
+  margin: 3px;
+  padding: 3px;
+  border-radius: 5px;
+  transition: 0.1s ease-in-out;
+  background-color: rgb(56, 135, 232);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+.is-active:hover {
+  background-color: rgb(20, 113, 225);
+  cursor: pointer;
 }
