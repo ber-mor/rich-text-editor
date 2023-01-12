@@ -1,50 +1,53 @@
 html {
   font-family: "Roboto";
 }
+
 .ProseMirror {
   padding: 5px 10px;
   border-radius: 10px;
   margin: 5px 0px;
   height: 90vh;
-  overflow: auto
-}
+  overflow: auto;
 
-.ProseMirror:focus {
-  outline: none;
-}
+  p.is-editor-empty:first-child::before {
+    color: #adb5bd;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+  }
 
-ul, ol {
-  padding: 0 1rem;
-}
+  img {
+    height: auto;
+    max-width: 500px;
+    border-radius: 10px;
+  }
 
-code {
-  background-color: rgba(#0d1f3a, 1.0);
-  color: #e4e4e4;
-  padding: 3px;
-}
+  code {
+    background-color: rgba(#0d1f3a, 1);
+    color: #e4e4e4;
+    padding: 3px;
+  }
 
-img {
-  height: auto;
-  max-width: 500px;
-  border-radius: 10px;
-}
+  blockquote {
+    padding-left: 1rem;
+    border-left: 2px solid rgba(#0d0d0d, 0.1);
+  }
 
-.ProseMirror-selectednode {
-  outline: 2px solid #b9e3ff;
-}
+  hr {
+    border: none;
+    border-top: 2px solid rgba(#0d0d0d, 0.1);
+    margin: 2rem 0;
+  }
 
-blockquote {
-  padding-left: 1rem;
-  border-left: 2px solid rgba(#0D0D0D, 0.1);
-}
+  &:focus {
+    outline: none;
+  }
 
-hr {
-  border: none;
-  border-top: 2px solid rgba(#0D0D0D, 0.1);
-  margin: 2rem 0;
-}
+  &-selectednode {
+    outline: 2px solid #b9e3ff;
+  }
 
-.ProseMirror {
   table {
     border-collapse: collapse;
     margin: 0;
@@ -110,19 +113,19 @@ hr {
   cursor: col-resize;
 }
 
-.table-options{
+.table-options {
   display: none;
 }
 
-.editor-icon{
+.editor-icon {
   margin: 3px;
   padding: 3px;
   border-radius: 5px;
   transition: 0.1s ease-in-out;
-  color:#a9a9a9
+  color: #a9a9a9;
 }
 
-.editor-icon:hover{
+.editor-icon:hover {
   cursor: pointer;
   background-color: rgb(236, 245, 255);
 }

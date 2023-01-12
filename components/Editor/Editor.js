@@ -23,9 +23,10 @@ import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import FormatListNumberedIcon from "@mui/icons-material/FormatListNumbered";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
-import UndoIcon from '@mui/icons-material/Undo';
-import RedoIcon from '@mui/icons-material/Redo';
-import TableChartIcon from '@mui/icons-material/TableChart';
+import UndoIcon from "@mui/icons-material/Undo";
+import RedoIcon from "@mui/icons-material/Redo";
+import TableChartIcon from "@mui/icons-material/TableChart";
+import Placeholder from "@tiptap/extension-placeholder";
 
 const MenuBar = ({ editor }) => {
   if (!editor) {
@@ -37,7 +38,7 @@ const MenuBar = ({ editor }) => {
       <FormatBoldIcon
         onClick={() => editor.chain().focus().toggleBold().run()}
         disabled={!editor.can().chain().focus().toggleBold().run()}
-        className={editor.isActive("bold") ? "is-active" : "editor-icon"}
+        className={editor.isActive("bold") ? styles.isActive : "editor-icon"}
       />
       <FormatItalicIcon
         onClick={() => editor.chain().focus().toggleItalic().run()}
@@ -167,24 +168,23 @@ const MenuBar = ({ editor }) => {
 export default () => {
   const editor = useEditor({
     extensions: [
+      Placeholder.configure({
+        placeholder: "Write something here…",
+      }),
       StarterKit,
       Document,
       Paragraph,
       Text,
       Image,
-      Table.configure({
-        resizable: true,
-      }),
       TableRow,
       TableHeader,
       TableCell,
+      Table.configure({
+        resizable: true,
+      }),
     ],
-    content: `<h1>Hola</h1>`,
+    content: ``,
   });
-
-  function printContent(){
-    console.log(JSON.stringify(editor.getJSON()))
-  }
 
   const addImage = useCallback(() => {
     const url = window.prompt("URL");
